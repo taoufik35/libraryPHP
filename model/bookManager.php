@@ -4,13 +4,15 @@ class BookManager extends Model {
 
   // Récupère tous les livres
   public function getBooks() {
-    $query = $this->db->query("SELECT * FROM book");
+    $query = $this->db->query("SELECT title, author, book_type, release_date, borrow FROM book");
 
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
-    var_dump($result);
     foreach($result as $key =>$book){
-     if( $book["customer_id"]===""){
-       $book["customer_id"]="NULL";
+     if( $book["borrow"]==="1"){
+       echo "<i class='fas fa-times-circle'></i>";
+     }
+     else{
+       echo "<i class='fas fa-check-circle'></i>";
      }
       $result[$key]= new Book($book);
     }
