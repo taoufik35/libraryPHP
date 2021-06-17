@@ -12,5 +12,6 @@ require "model/bookManager.php";
 $bookModel= new BookManager();
 $book= $bookModel->getBooks();
 
+require "view/indexView.php";
 
 ?>
