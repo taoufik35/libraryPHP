@@ -17,10 +17,7 @@
   <link rel="stylesheet" href="assets/css/normalize.css">
   <link rel="stylesheet" href="assets/css/main.css">
   <meta name="theme-color" content="#fafafa">
-  <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
-  <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
-  <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
-
+  <script src="https://kit.fontawesome.com/90f7a525f4.js" crossorigin="anonymous"></script>
 
 
 </head>

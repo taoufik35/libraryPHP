@@ -2,7 +2,8 @@
 require_once "model/entity/entity.php";
 
 class Book extends Entity {
-    
+
+    protected int $id;
     protected string $title;
     protected string $author;
     protected string $book_type;
@@ -10,7 +11,7 @@ class Book extends Entity {
     protected int $borrow;
     protected string $borrow_date;
     protected string $summary;
-    protected ?int $customer_id;
+    protected int $customer_id;
 
 
 
@@ -19,6 +20,17 @@ class Book extends Entity {
           $this->hydrate($data);
         }
       }
+
+
+      public function setId(int $id){
+        $this->id=$id;
+        return $this;
+      }
+
+      public function getId(){
+        return $this->id;
+      }
+
 
       public function setTitle(string $title){
         $this->title= $title;
@@ -83,7 +95,7 @@ class Book extends Entity {
           return $this->summary;
       }
 
-      public function setCustomer_id(?int $customer_id){
+      public function setCustomer_id(int $customer_id){
         $this->customer_id= $customer_id;
         
       }
