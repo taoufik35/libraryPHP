@@ -23,8 +23,6 @@ abstract class dataBase
             die();
           }
         }
-      
-      
 
 }
 ?>

@@ -1,7 +1,7 @@
 <?php
 require_once "model/entity/entity.php";
 
-class Book extends Entity {
+class Customer extends Entity {
     
     protected string $lastname;
     protected string $firstname;

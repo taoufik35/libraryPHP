@@ -6,9 +6,9 @@ include "layout/nav.php";
 ?>
 
 <table class="table table-striped mt-5">
-    <?php foreach($books as $book): ?>
+
   <thead>
-    <tr>
+    <tr class="text-center">
       <th scope="col">#</th>
       <th scope="col">Titre</th>
       <th scope="col">Auteur</th>
@@ -18,20 +18,30 @@ include "layout/nav.php";
       <th scope="col">Detail</th>
     </tr>
   </thead>
+  
   <tbody>
-    <tr>
-      <th><?php echo $book->getId(); ?></th>
+  <?php foreach($books as $key=> $book): ?>
+    <tr class="text-center">    
+    
+      <th scope="row"><?php echo $book->getId(); ?></th>
       <td><?php echo $book->getTitle(); ?></td>
-      <td><?php echo $book->getAurhor(); ?></td>
-      <td>@mdo</td>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <td><?php echo $book->getAuthor(); ?></td>
+      <td><?php echo $book->getBook_type();?></td>
+      <td><?php echo $book->getRelease_date();?></td>
+      <?php if ($book->getBorrow()=== 1): ?>
+       <td class="text-danger"><?php echo "<i class='fas fa-times-circle'></i>"?></td>
+      <?php else :?>
+
+        <td class="text-success"><?php echo "<i class='fas fa-check-circle'>"?></td>
+
+      <?php endif ?>
+      <td><a href="#" class="btn btn-info">Voir</a></td>
     </tr>
+   <?php endforeach ?>
   </tbody>
 </table>
 
-<?php endforeach?>
+
 
 <?php
 include "layout/footer.php";
