@@ -1,7 +1,7 @@
 <?php
 
 abstract class Entity {
-  protected ?int $id;
+  protected int $id;
 
   public function getId():int
   {

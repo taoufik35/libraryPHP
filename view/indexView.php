@@ -6,58 +6,32 @@ include "layout/nav.php";
 ?>
 
 <table class="table table-striped mt-5">
+    <?php foreach($books as $book): ?>
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Titre</th>
+      <th scope="col">Auteur</th>
+      <th scope="col">Style</th>
+      <th scope="col">Parution</th>
+      <th scope="col">status</th>
+      <th scope="col">Detail</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
+      <th><?php echo $book->getId(); ?></th>
+      <td><?php echo $book->getTitle(); ?></td>
+      <td><?php echo $book->getAurhor(); ?></td>
+      <td>@mdo</td>
       <td>Mark</td>
       <td>Otto</td>
       <td>@mdo</td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
   </tbody>
 </table>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<?php endforeach?>
 
 <?php
 include "layout/footer.php";
