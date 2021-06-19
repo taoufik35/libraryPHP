@@ -16,8 +16,24 @@ class BookManager extends Model {
 
   // Récupère un livre
   public function getBook() {
+    $query = $this->db->prepare(
+      "SELECT *
+        FROM Book
+        JOIN Customer ON book.customer_id = Customer.id; 
+     
+  ");
 
-  }
+$query->execute();
+
+
+  
+  $result= $query->fetch(PDO::FETCH_ASSOC);
+     $result= new Book($result);
+
+  return $result;
+  
+}
+
 
   // Ajoute un nouveau livre
   public function addBook() {
