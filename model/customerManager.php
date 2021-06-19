@@ -1,6 +1,6 @@
 <?php
 
-class userManager {
+class customerManager {
 
   // Récupère tous les utilisateurs
   public function getUsers() {

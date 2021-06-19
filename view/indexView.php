@@ -35,7 +35,7 @@ include "layout/nav.php";
         <td class="text-success"><?php echo "<i class='fas fa-check-circle'>"?></td>
 
       <?php endif ?>
-      <td><a href="#" class="btn btn-info">Voir</a></td>
+      <td><a href="bookControl.php" class="btn btn-info">Voir</a></td>
     </tr>
    <?php endforeach ?>
   </tbody>
