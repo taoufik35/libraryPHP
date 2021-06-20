@@ -13,7 +13,7 @@ class Customer extends Entity {
 
 
 
-    public function __construct(array $data = null) {
+    public function __construct(?array $data = null) {
         if($data) {
           $this->hydrate($data);
         }
@@ -21,7 +21,7 @@ class Customer extends Entity {
 
       public function setLastname(string $lastname){
         $this->lastname= $lastname;
-        return $this;
+        
       }
 
       public function getLastname(){
@@ -30,7 +30,6 @@ class Customer extends Entity {
 
       public function setFirstname(string $firstname){
         $this->firstname= $firstname;
-        return $this;
       }
 
       public function getFirstname(){
@@ -39,7 +38,7 @@ class Customer extends Entity {
 
       public function setAge(int $age){
         $this->age= $age;
-        return $this;
+        
       }
 
       public function getAge(){
@@ -48,7 +47,7 @@ class Customer extends Entity {
 
       public function setDate_signup(string $date_signup){
         $this->date_signup= $date_signup;
-        return $this;
+      
       }
 
       public function getDate_signup(){
@@ -57,7 +56,7 @@ class Customer extends Entity {
 
       public function setEmail(string $email){
         $this->email= $email;
-        return $this;
+ 
       }
 
       public function getEmail(){
@@ -66,7 +65,7 @@ class Customer extends Entity {
 
       public function setCity(string $city){
         $this->city= $city;
-        return $this;
+  
       }
 
       public function getCity(){
@@ -75,7 +74,7 @@ class Customer extends Entity {
 
       public function setCity_code(int $city_code){
         $this->city_code= $city_code;
-        return $this;
+       
       }
 
       public function getCity_code(){

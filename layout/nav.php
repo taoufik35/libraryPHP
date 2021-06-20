@@ -14,7 +14,7 @@
               Opération
             </a>
             <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-              <li><a class="dropdown-item" href="">Nouveau livre</a></li>
+              <li><a class="dropdown-item" href="addBook.php">Nouveau livre</a></li>
               <li><a class="dropdown-item" href=""></a></li>
               <li><a class="dropdown-item" href="">nouveau membre</a></li>
             </ul>
