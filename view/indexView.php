@@ -32,10 +32,10 @@ include "layout/nav.php";
        <td class="text-danger"><?php echo "<i class='fas fa-times-circle'></i>"?></td>
       <?php else :?>
 
-        <td class="text-success"><?php echo "<i class='fas fa-check-circle'>"?></td>
+        <td class="text-success"><?php echo "<i class='fas fa-check-circle'></i>"?></td>
 
       <?php endif ?>
-      <td><a href="bookControl.php" class="btn btn-info">Voir</a></td>
+      <td><a href="bookControl.php?id=<?php echo $book->getId() ?>" class="btn btn-info">Voir</a></td>
     </tr>
    <?php endforeach ?>
   </tbody>

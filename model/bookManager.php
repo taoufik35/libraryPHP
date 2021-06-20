@@ -15,30 +15,38 @@ class BookManager extends Model {
   }
 
   // Récupère un livre
-  public function getBook() {
-    $query = $this->db->prepare(
-      "SELECT *
-        FROM Book
-        JOIN Customer ON book.customer_id = Customer.id; 
-     
-  ");
-
-$query->execute();
-
-
+  public function getBook(int $id) {
+    $query= $this->db->prepare("SELECT * FROM book WHERE id = :id");
+    $result = $query->execute([
+      "id" => $id
+    ]);
+    $result = $query->fetch(PDO::FETCH_ASSOC);
+      $result = new Book($result);
+      return $result;
   
-  $result= $query->fetch(PDO::FETCH_ASSOC);
-     $result= new Book($result);
-
-  return $result;
-  
-}
-
+  }
 
   // Ajoute un nouveau livre
-  public function addBook() {
+  public function addBook(Book $book) {
+    $query= $this->db->prepare("INSERT INTO book(title, author, book_type, release_date, summary)
+    
+    VALUES (:title, :author, :book_type, :release_date, :summary)");
 
+
+  $result= $query->execute([
+    
+    "title"=> $book->getTitle(),
+    "author"=> $book->getAuthor(),
+    "book_type"=> $book->getBook_type(),
+    "release_date"=> $book->getRelease_date(),
+    "summary"=> $book->getSummary()
+    
+  ]);
+
+  return $result;
   }
+
+  
 
   // Met à jour le statut d'un livre emprunté
   public function updateBookStatus() {

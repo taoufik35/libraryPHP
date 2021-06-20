@@ -1,6 +1,6 @@
 <?php
-
-class customerManager {
+require_once "model.php";
+class customerManager extends Model {
 
   // Récupère tous les utilisateurs
   public function getUsers() {
@@ -8,7 +8,18 @@ class customerManager {
   }
 
   // Récupère un utilisateur par son id
-  public function getUserById() {
+  public function getUserById(int $id) {
+    $query= $this->db->prepare("SELECT * FROM customer WHERE id = :id" );
+    $query->execute([
+      "id"=>$id
+    ]);
+
+
+    $result=$query->fetch(PDO::FETCH_ASSOC);
+    $result= new Customer($result);
+
+    return $result;
+   
 
   }
 
