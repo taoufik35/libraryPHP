@@ -9,7 +9,7 @@ class Book extends Entity {
     protected string $book_type;
     protected string $release_date;
     protected ?int $borrow;
-    protected string $borrow_date;
+    protected ? string $borrow_date;
     protected string $summary;
     protected ?string $customer_id;
 
@@ -72,7 +72,7 @@ class Book extends Entity {
           return $this->borrow;
       }
 
-      public function setBorrow_date(string $borrow_date){
+      public function setBorrow_date(?string $borrow_date){
         $this->borrow_date= $borrow_date;
       }
 

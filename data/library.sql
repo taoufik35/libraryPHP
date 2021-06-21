@@ -30,7 +30,7 @@ CREATE TABLE Book(
   author VARCHAR(50) NOT NULL,
   book_type VARCHAR(50) NOT NULL,
   release_date CHAR (5) NOT NULL,
-  borrow BOOLEAN NULL,
+  borrow BOOLEAN NOT NULL,
   borrow_date TIMESTAMP NULL, 
   summary TEXT NOT NULL,
   customer_id INT UNSIGNED NULL,
