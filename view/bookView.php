@@ -27,13 +27,12 @@ if(!isset($error)):
             <?php if($book->getCustomer_id() !== NULL) :?>
             <li class="list-group-item">Emprunter par : <?php echo $customer->getLastname() . " " . $customer->getFirstname(); ?></li>
             <?php endif;?>
-            <li class="list-group-item">A third item</li>
         </ul>
 
                 <?php if($book->getBorrow() === 0): ?>
                 <div class="bouton">
                <?php echo "<a href='#' class='btn bout btn-danger'>emprunter</a>" ?>
-                   
+               <a href="deleteBook.php?id=<?php echo $book->getId() ?>" class="btn btn-info">supprimer le livre</a>    
                 </div>
                 <?php endif ?>
             </div>

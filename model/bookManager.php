@@ -46,7 +46,13 @@ class BookManager extends Model {
   return $result;
   }
 
-  
+    // Met à jour le statut d'un livre emprunté
+    public function deleteBook(int $id) {
+      $query= $this->db->prepare("DELETE FROM book WHERE id = :id");
+      $result = $query->execute([
+        "id" => $id
+      ]);
+    }
 
   // Met à jour le statut d'un livre emprunté
   public function updateBookStatus() {
